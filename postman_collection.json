@@ -1,8 +1,7 @@
 {
   "info": {
     "name": "Backend Task API",
-    "description": "Postman collection for the Express, Prisma, PostgreSQL, Redis, JWT, and upload backend.",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "description": "Postman collection"
   },
   "variable": [
     {

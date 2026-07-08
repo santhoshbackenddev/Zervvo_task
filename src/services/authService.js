@@ -3,7 +3,7 @@ const prisma = require('../config/prisma');
 const AppError = require('../utils/AppError');
 const { signToken } = require('../utils/jwt');
 
-const SALT_ROUNDS = 12;
+const SALT_ROUNDS = 10;
 
 const sanitizeUser = (user) => ({
   id: user.id,

@@ -3,11 +3,7 @@ const bookController = require('../controllers/bookController');
 const authMiddleware = require('../middleware/authMiddleware');
 const rateLimiter = require('../middleware/rateLimiter');
 const validateRequest = require('../middleware/validateRequest');
-const {
-  idParamValidator,
-  createBookValidator,
-  updateBookValidator,
-} = require('../validators/bookValidators');
+const { idParamValidator, createBookValidator, updateBookValidator, } = require('../validators/bookValidators');
 
 const router = express.Router();
 const protectedMiddleware = [authMiddleware, rateLimiter];
