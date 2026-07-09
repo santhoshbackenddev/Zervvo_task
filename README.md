@@ -92,6 +92,7 @@ Authors:
 Books:
 
 - `GET /books`
+- `GET /books/author/:authorId`
 - `GET /books/:id`
 - `POST /books` protected
 - `PUT /books/:id` protected

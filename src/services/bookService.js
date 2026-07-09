@@ -31,6 +31,16 @@ const ensureAuthorExists = async (authorId) => {
   }
 };
 
+const getBooksByAuthorId = async (authorId) => {
+  await ensureAuthorExists(authorId);
+
+  return prisma.book.findMany({
+    where: { authorId },
+    orderBy: { createdAt: 'desc' },
+    include: { author: true },
+  });
+};
+
 const createBook = async (data) => {
   await ensureAuthorExists(data.authorId);
 
@@ -65,6 +75,7 @@ const deleteBook = async (id) => {
 module.exports = {
   getBooks,
   getBookById,
+  getBooksByAuthorId,
   createBook,
   updateBook,
   deleteBook,

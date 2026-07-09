@@ -8,6 +8,15 @@ const idParamValidator = z.object({
   params: idParamSchema,
 });
 
+const authorIdParamValidator = z.object({
+  params: z.object({
+    authorId: z.coerce
+      .number()
+      .int('Author ID must be a positive integer')
+      .positive('Author ID must be a positive integer'),
+  }),
+});
+
 const createBookValidator = z.object({
   body: z.object({
     title: z
@@ -59,6 +68,7 @@ const updateBookValidator = z.object({
 
 module.exports = {
   idParamValidator,
+  authorIdParamValidator,
   createBookValidator,
   updateBookValidator,
 };

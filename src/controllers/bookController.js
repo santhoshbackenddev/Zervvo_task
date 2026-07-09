@@ -12,6 +12,11 @@ const getBookById = asyncHandler(async (req, res) => {
   return successResponse(res, 200, 'Book retrieved successfully', book);
 });
 
+const getBooksByAuthorId = asyncHandler(async (req, res) => {
+  const books = await bookService.getBooksByAuthorId(Number(req.params.authorId));
+  return successResponse(res, 200, 'Author books retrieved successfully', books);
+});
+
 const createBook = asyncHandler(async (req, res) => {
   const book = await bookService.createBook({
     ...req.body,
@@ -44,6 +49,7 @@ const deleteBook = asyncHandler(async (req, res) => {
 module.exports = {
   getBooks,
   getBookById,
+  getBooksByAuthorId,
   createBook,
   updateBook,
   deleteBook,
